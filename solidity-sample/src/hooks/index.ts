@@ -29,3 +29,9 @@ export function useSetCount() {
   const { state, send } = useContractFunction(contract, "setCount", {});
   return { state, send };
 }
+
+export function useContractMethod(methodName: string) {
+  //使用参数可以将useIncrement与useSetCount合并
+  const { state, send } = useContractFunction(contract, methodName, {});
+  return { state, send };
+}
